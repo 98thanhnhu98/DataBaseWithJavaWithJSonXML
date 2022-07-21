@@ -6,9 +6,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class Student {
+    @XmlAttribute
     private long id;
+    @XmlElement
     private String name;
+    @XmlElement
     private String email;
+    @XmlElement
     private String phone;
 
     public Student() {
@@ -24,7 +28,6 @@ public class Student {
     public long getId() {
         return id;
     }
-    @XmlAttribute
 
     public void setId(long id) {
         this.id = id;
@@ -33,7 +36,6 @@ public class Student {
     public String getName() {
         return name;
     }
-    @XmlElement
 
     public void setName(String name) {
         this.name = name;
@@ -42,7 +44,6 @@ public class Student {
     public String getEmail() {
         return email;
     }
-    @XmlElement
 
     public void setEmail(String email) {
         this.email = email;
@@ -51,7 +52,6 @@ public class Student {
     public String getPhone() {
         return phone;
     }
-    @XmlElement
 
     public void setPhone(String phone) {
         this.phone = phone;

@@ -1,5 +1,6 @@
 package Connector;
 
+import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
 import java.io.IOException;
@@ -31,7 +32,7 @@ public class App {
         return connection;
     }
 
-    public static void main(String[] args) throws SQLException, IOException, ParserConfigurationException, TransformerException {
+    public static void main(String[] args) throws SQLException, IOException, JAXBException, ParserConfigurationException, TransformerException {
         Scanner sc = new Scanner(System.in);
         UpToJson upToJson = new UpToJson();
         mssql mssql = new mssql();
@@ -46,10 +47,10 @@ public class App {
             int chon = sc.nextInt();
             switch (chon) {
                 case 1:
-                    upToJson.WriteStudentToJson(students);
+                    upToJson.WriteStudentToJson1(students);
                     break;
                 case 2:
-                    upToJson.WritenXMLwithDom(students);
+                    upToJson.WritenXMLwithDom();
                     break;
                 case 3:
                     mssql.createxmltest();
@@ -64,12 +65,10 @@ public class App {
                     mssql.deleteDataxmltest();
                     break;
                 case 7:
-                    upToJson.FindStudentByNameToJson(students);
+                    upToJson.FindStudentByNameToJson();
                     break;
                 case 8:
                     System.exit(0);
-                    break;
-                case 9:
                     break;
                 default:
                     System.out.println("Wrong");
